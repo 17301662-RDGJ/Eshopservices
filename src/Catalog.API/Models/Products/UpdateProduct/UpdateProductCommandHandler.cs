@@ -1,5 +1,6 @@
 using Marten;
 using Catalog.API.Models.Products;
+
 namespace Catalog.API.Products.UpdateProduct;
 
 public class UpdateProductCommandHandler
@@ -16,14 +17,12 @@ public class UpdateProductCommandHandler
             return new UpdateProductResult(false);
         }
 
-        // 2. Actualizar las propiedades con los nuevos datos
+        // 2. Actualizar las propiedades confirmadas en Product.cs
         product.Name = command.Name;
         product.Category = command.Category;
-        product.Description = command.Description;
-        product.ImageFile = command.ImageFile;
         product.Price = command.Price;
 
-        // 3. Guardar cambios en la base de datos
+        // 3. Guardar cambios
         session.Update(product);
         await session.SaveChangesAsync(cancellationToken);
 
