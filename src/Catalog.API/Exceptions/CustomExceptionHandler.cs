@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-
+using FluentValidation; 
 namespace Catalog.API.Exceptions
 {
     public class CustomExceptionHandler : IExceptionHandler
