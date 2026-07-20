@@ -1,5 +1,5 @@
 using Marten;
-
+using Catalog.API.Models.Products;
 namespace Catalog.API.Products.UpdateProduct;
 
 public class UpdateProductCommandHandler
